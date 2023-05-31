@@ -1,5 +1,11 @@
 # @antv/gi-assets-neo4j
 
+## 3.0.0
+
+### Major Changes
+
+- neo4j 连接协议放开
+
 ## 2.0.3
 
 ### Patch Changes
