@@ -88,9 +88,20 @@ deps.forEach(item => {
   const { url, name } = item;
   fetch(url)
     .then(res => {
-      return res.text();
+      const jsUrl = url.replace('min.js', 'css');
+      console.log(`%c Js url: ${jsUrl} `, `color:red`);
+      console.log(res.ok);
+      if(res.ok) {
+        return res.text();
+      } else {
+        return "";
+      }
     })
     .then(res => {
+      if(res === "") {
+        console.log("Empty");
+        return;
+      }
       fs.writeFile(path.resolve(__dirname, '../public/libs/', `${name}.min.js`), res, error => {
         if (error) {
           console.log(`%c Error! JS : ${name} :${error} `, `color:red`);
@@ -102,9 +113,20 @@ deps.forEach(item => {
 
   fetch(url.replace('min.js', 'css'))
     .then(res => {
-      return res.text();
+      const cssUrl = url.replace('min.js', 'css');
+      console.log(`%c Css url: ${cssUrl} `, `color:red`);
+      console.log(res.ok);
+      if(res.ok) {
+        return res.text();
+      } else {
+        return "";
+      }
     })
     .then(res => {
+      if(res === "") {
+        console.log("Empty");
+        return;
+      }
       fs.writeFile(path.resolve(__dirname, '../public/libs/', `${name}.css`), res, error => {
         if (error) {
           console.log(`%c Error! CSS : ${name} :${error} `, `color:red`);

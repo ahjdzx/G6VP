@@ -7,7 +7,7 @@ export let Driver: Neo4JDriver | undefined;
 export const connect = async () => {
   if (Driver) Driver.close();
   const { username, password, engineServerURL } = utils.getServerEngineContext();
-  if (engineServerURL.startsWith('neo4j+s:')) {
+  // if (engineServerURL.startsWith('neo4j+s:')) {
     Driver = new Neo4JDriver(engineServerURL, username, password);
     const isConnect = await Driver.connect();
     console.log('isConnect', isConnect);
@@ -25,13 +25,13 @@ export const connect = async () => {
       description: '请检查数据库地址，用户名，密码是否填写正确',
     });
     return false;
-  } else {
-    notification.error({
-      message: 'Neo4j 数据库链接失败',
-      description: '数据库地址仅支持 neo4j+s: 协议',
-    });
-    return false;
-  }
+  // } else {
+  //   notification.error({
+  //     message: 'Neo4j 数据库链接失败',
+  //     description: '数据库地址仅支持 neo4j+s: 协议',
+  //   });
+  //   return false;
+  // }
 };
 
 export const getDriver = async () => {
