@@ -9,6 +9,7 @@
 // import SearchBar from './SearchBar';
 // import AddSheetbar from './AddSheetbar';
 import CypherQuery from './CypherQuery';
+import KnowledgeQuery from './KnowledgeQuery';
 import GraphAnnotation from './GraphAnnotation';
 import GremlinQuery from './GremlinQuery';
 import ModeSwitch from './ModeSwitch';
@@ -40,6 +41,7 @@ export {
   StructAnalysis,
   // TemplateQuery,
   CypherQuery,
+  KnowledgeQuery,
   GraphAnnotation,
   Undo,
   Redo,

@@ -165,6 +165,11 @@ const assets = [
     useProbability: 0.3,
   },
   {
+    id: 'KnowledgeQuery',
+    devCost: 11,
+    useProbability: 0.3,
+  },
+  {
     id: 'InteracticeQuery',
     devCost: 50,
     useProbability: 0.8,

@@ -37,10 +37,12 @@ export const getServiceOptionsByEngineId = (services: GIService[], serviceId: st
         label: c.id,
       };
     });
+  console.log("options: ", options)
   const defaultValue =
     options.find(c => {
       return c.value.startsWith(engineId);
     }) || options[0];
+  console.log("defaultValue: ", defaultValue)
   return {
     options,
     defaultValue: defaultValue.value,

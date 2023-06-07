@@ -34,6 +34,39 @@ const Cypher_Template = engineId => [
       },
     },
   },
+  {
+    id: 'KnowledgeQuery',
+    name: 'Knowledge 查询',
+    props: {
+      serviceId: `${engineId}/KnowledgeQuery`,
+      isShowPublishButton: false,
+      saveCypherTemplateServceId: `${engineId}/PublishTemplate`,
+      initialValue: 'MATCH n RETURN LIMIT 100',
+      GI_CONTAINER_INDEX: 2,
+      GIAC_CONTENT: {
+        visible: false,
+        disabled: false,
+        isShowTitle: true,
+        title: 'Knowledge 查询',
+        isShowIcon: true,
+        icon: 'icon-query',
+        isShowTooltip: true,
+        tooltip: '',
+        tooltipColor: '#3056e3',
+        tooltipPlacement: 'right',
+        hasDivider: false,
+        height: '60px',
+        isVertical: true,
+        containerType: 'div',
+        containerAnimate: false,
+        containerPlacement: 'RT',
+        offset: [0, 0],
+        containerWidth: '350px',
+        containerHeight: 'calc(100% - 100px)',
+        contaienrMask: false,
+      },
+    },
+  },
 ];
 
 const Gremlin_Template = engineId => [
@@ -121,7 +154,7 @@ const getConfigByEngineId = (engineId, template) => {
       item.props.containers = [
         {
           id: 'GI_CONTAINER_TOP',
-          GI_CONTAINER: isCypher ? ['CypherQuery'] : ['GremlinQuery'],
+          GI_CONTAINER: isCypher ? ['KnowledgeQuery'] : ['GremlinQuery'],
         },
         {
           id: 'GI_CONTAINER_SIDE',

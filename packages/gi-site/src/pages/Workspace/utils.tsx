@@ -602,6 +602,38 @@ const Cypher_Template = [
         contaienrMask: false,
       },
     },
+  },{
+    id: 'KnowledgeQuery',
+    name: 'Knowledge 查询',
+    props: {
+      serviceId: 'GI/KnowledgeQuery',
+      isShowPublishButton: false,
+      saveCypherTemplateServceId: 'GI/PublishTemplate',
+      initialValue: 'MATCH n RETURN LIMIT 100',
+      GI_CONTAINER_INDEX: 2,
+      GIAC_CONTENT: {
+        visible: false,
+        disabled: false,
+        isShowTitle: true,
+        title: 'Knowledge 查询',
+        isShowIcon: true,
+        icon: 'icon-query',
+        isShowTooltip: true,
+        tooltip: '',
+        tooltipColor: '#3056e3',
+        tooltipPlacement: 'right',
+        hasDivider: false,
+        height: '60px',
+        isVertical: true,
+        containerType: 'div',
+        containerAnimate: false,
+        containerPlacement: 'RT',
+        offset: [0, 0],
+        containerWidth: '350px',
+        containerHeight: 'calc(100% - 100px)',
+        contaienrMask: false,
+      },
+    },
   },
 ];
 
@@ -660,10 +692,10 @@ export const getConfigByEngineId = (engineId, template = undefined) => {
     componentConfig.forEach(item => {
       if (item.id === 'GrailLayout') {
         const rightContainer = item.props.containers.find(container => container.id === 'GI_CONTAINER_RIGHT');
-        rightContainer.GI_CONTAINER = ['FilterPanel', 'CypherQuery'];
+        rightContainer.GI_CONTAINER = ['FilterPanel', 'CypherQuery', 'KnowledgeQuery'];
       } else if (item.id === 'SegmentedLayout') {
         const sideContainer = item.props.containers.find(container => container.id === 'GI_CONTAINER_SIDE');
-        sideContainer.GI_CONTAINER = ['FilterPanel', 'CypherQuery'];
+        sideContainer.GI_CONTAINER = ['FilterPanel', 'CypherQuery', 'KnowledgeQuery'];
       }
     });
   }

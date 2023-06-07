@@ -340,6 +340,14 @@
     "icon": "icon-query",
     "category": "data-query"
   },
+  "KnowledgeQuery": {
+    "id": "KnowledgeQuery",
+    "name": "Knowledge 查询",
+    "type": "GIAC_CONTENT",
+    "docs": "",
+    "icon": "icon-query",
+    "category": "data-query"
+  },
   "GraphAnnotation": {
     "id": "GraphAnnotation",
     "name": "图标注(MENU)",

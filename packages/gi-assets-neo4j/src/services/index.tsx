@@ -1,4 +1,5 @@
 import * as CypherQuery from './CypherQuery';
+import * as KnowledgeQuery from './KnowledgeQuery';
 import Engine from './Engine';
 import * as Initializer from './Initializer';
 import * as NeighborsQuery from './NeighborsQuery';
@@ -16,6 +17,7 @@ export default {
   services: {
     ...Initializer,
     ...CypherQuery,
+    ...KnowledgeQuery,
     ...NeighborsQuery,
     ...Neo4jService,
   },

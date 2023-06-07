@@ -2,6 +2,7 @@ import { utils } from '@antv/gi-sdk';
 import info from './info';
 
 export default context => {
+  console.log("gi-assets-basic Initializer context: ", context)
   const { services, engineId } = context;
   const { options: initializerServiceOptions, defaultValue: defaultInitializerService } =
     utils.getServiceOptionsByEngineId(services, info.services[0], engineId);

@@ -6,8 +6,9 @@ metas.GIAC_CONTENT.properties.GIAC_CONTENT.properties.icon.default = info.icon;
 metas.GIAC_CONTENT.properties.GIAC_CONTENT.properties.title.default = info.name;
 
 const registerMeta = context => {
-  console.log("context: ", context)
   const { services = [], engineId } = context;
+  console.log("context: ", context)
+  console.log("engineId: " + engineId)
   const { options, defaultValue } = utils.getServiceOptionsByEngineId(services, info.services[0], engineId);
   const { options: publishOptions, defaultValue: publishDefaultValue } = utils.getServiceOptionsByEngineId(
     services,
