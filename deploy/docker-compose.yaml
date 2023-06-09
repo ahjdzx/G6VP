@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: nginx:1.13.6
+    container_name: 'nginx'
+    ports:
+      - '7001:7001'
+    volumes:
+      - './nginx.conf:/etc/nginx/conf.d/nginx.conf'
+      - '/data/nginx/logs/:/var/log/nginx'
+    restart: always
+
+  # 图谱分析站点
+  gi-site:
+    image: 'harbor-tuhu.tencentcloudcr.com/mlp-algo-serving/g6vp:v0.0.3'
+    container_name: 'gi-site'
+    ports:
+      - '7071:7001'
+    restart: always
